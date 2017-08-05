@@ -1,4 +1,5 @@
 /**app.wxss**/
+/*css代码 用来设置整个应用的样式*/
 .container {
   height: 100%;
   display: flex;
