@@ -1,8 +1,16 @@
-<!--index.wxml-->
+<!--index.wxml定义页面结构：语法是XML语法，不是HTML-->
 <view class="container">
   <view  bindtap="bindViewTap" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <text>{{userInfo.city}}</text>
+    <text class="userinfo-sex">性别:{{userInfo.gender==2?"女":"男"}}</text>
+  </view>
+  <view class="classname">
+    <view class="item" wx:for="{{list}}">
+    <image src="{{item.image}}"></image>>
+      <text>{{item.title}}</text>
+    </view>
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
