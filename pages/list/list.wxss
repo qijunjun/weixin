@@ -1,0 +1,49 @@
+.container{
+    font-family:"微软雅黑";
+    font-size:28rpx;
+    color:#333;
+}
+.header{
+    font-size:32rpx;
+    text-align:center;
+    border-bottom:2rpx solid #ccc;
+    padding:10rpx 0;
+    color:#ccc;
+}
+.list-item{
+    padding:10rpx 30rpx;
+    display:flex;
+    border-bottom:2rpx solid #ccc;
+}
+.list-item image{
+    width:110rpx;
+    height:110rpx;
+}
+.list-item .info{
+    font-size:26rpx;
+    color:#ccc;
+    line-height:44rpx;
+    margin-left:10rpx;
+    display:inline-block;
+    width:100%;
+}
+.list-item .moveName{
+    width:100%;
+    position:relative;
+    height:44rpx;
+}
+.list-item .moveName .h3{
+    font-size:32rpx;
+    color:#333;
+    position:absolute;
+    left:0;
+    top:0;
+}
+.list-item .moveName  .score{
+   position:absolute;
+   right:0;
+   top:0;
+   color:#f00;
+   font-weight:bold;
+
+}

@@ -1,0 +1,60 @@
+<view class="container">
+    <view class="header">正在上映的电影-北京</view>
+    <view class="list">
+        <view class="list-item">
+            <image src="../../images/movie01.png"></image>
+            <view class="info">
+                <view class="moveName">
+                    <text class="h3">战狼2</text>
+                    <text class="score">8.2</text>
+                </view>
+                <view class="publicTime">战狼(2017)</view>
+                <view class="author">导演:林超贤</view>
+            </view>
+        </view>
+        <view class="list-item">
+            <image src="../../images/movie02.png"></image>
+            <view class="info">
+                <view class="moveName">
+                    <text class="h3">阿唐奇遇</text>
+                    <text class="score">5.5</text>
+                </view>
+                <view class="publicTime">阿唐奇遇(2017)</view>
+                <view class="author">导演:张一白</view>
+            </view>
+        </view>
+        <view class="list-item">
+            <image src="../../images/movie03.png"></image>
+            <view class="info">
+                <view class="moveName">
+                    <text class="h3">从你的世界路过</text>
+                    <text class="score">5.9</text>
+                </view>
+                <view class="publicTime">从你的世界路过(2017)</view>
+                <view class="author">导演:贝克曼</view>
+            </view>
+        </view>
+        <view class="list-item">
+            <image src="../../images/movie01.png"></image>
+            <view class="info">
+                <view class="moveName">
+                    <text class="h3">王牌逗王牌</text>
+                    <text class="score">6.2</text>
+                </view>
+                <view class="publicTime">王牌逗王牌(2017)</view>
+                <view class="author">导演:郭敬明</view>
+            </view>
+        </view>
+        <view class="list-item">
+            <image src="../../images/movie01.png"></image>
+            <view class="info">
+                <view class="moveName">
+                    <text class="h3">战狼2</text>
+                    <text class="score">8.2</text>
+                </view>
+                <view class="publicTime">战狼(2017)</view>
+                <view class="author">导演:林超贤</view>
+            </view>
+        </view>
+    </view>
+</view>
