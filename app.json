@@ -3,13 +3,13 @@
     "pages/board/board",
     "pages/list/list",
     "pages/search/search",
-    "pages/index/index",
+    "pages/detail/detail",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#34595e",
-    "navigationBarTitleText": "豆瓣>>电影",
+    "navigationBarTitleText": "首页",
     "navigationBarTextStyle":"#fff",
     "enablePullDownRefresh":"true"
   },

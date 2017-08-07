@@ -1,0 +1,16 @@
+<view class="container">
+    <loading hidden="{{!loading}}">加载中...</loading>
+    <view class="image">
+        <image src="{{list.images.large}}" mode="aspectFill"></image>
+    </view>
+        <view class="moveName">{{list.original_title}}({{list.year}})</view>
+        <view class="list">
+            <view>评分:{{list.rating.average}}</view>
+            <view>导演:<block wx:for="{{list.directors}}"> {{ item.name }} </block></view>
+            <view>主演:<block wx:for="{{list.casts}}"> {{ item.name }} </block></view>
+        </view>
+        <view class="detail">
+            <view class="info">摘要:</view>
+            <view class="summary">{{list.summary}}</view>
+        </view>
+</view>

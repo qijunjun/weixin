@@ -4,7 +4,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    list:[],
+    loading:true,
+    title:'Loading'
   },
 
   /**
@@ -12,14 +14,29 @@ Page({
    */
   onLoad: function (params) {
       // 返回结果为Object{type:"teathers",title:"aaa"}
-    console.log(params)
+    this.data.title = params.name || this.data.title;
+    console.log(params.type);
+    const apiUrl = 'https://api.douban.com/v2/movie/'+params.type;
+    var that = this;
+    wx.request({
+      url:apiUrl,
+      data:{},
+      header:{
+        'Content-Type':'json'
+      },
+      success:function (res) {
+        console.log(res.data);
+        that.setData({list:res.data.subjects,title:res.data.title,loading:false});
+      }
+    });
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+   
   },
 
   /**

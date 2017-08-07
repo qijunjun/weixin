@@ -1,0 +1,32 @@
+.container{
+    padding:50rpx;
+    color:rgb(102,102,102);
+    font-size:24rpx;
+}
+.image{
+    height:400rpx;
+}
+.image image{
+    width:100%;
+    height:100%;
+}
+.moveName{
+    text-align:center;
+    margin:20rpx 0;
+    color:#000;
+    font-size:36rpx;
+}
+.list{
+    line-height:64rpx;
+}
+.detail view{
+    line-height:60rpx;
+}
+.detail .info{
+    color:#000;
+    font-size:30rpx;
+    margin-top:30rpx;
+}
+.detail .summary{
+    text-indent:52rpx;
+}

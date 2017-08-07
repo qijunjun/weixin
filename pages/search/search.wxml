@@ -1,0 +1,24 @@
+<view class="container">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="section">
+        <input id="search" placeholder-class="placeholder" name="q" value="{{inputValue}}" bindinput="bindKeyInput" placeholder="请在此输入搜索内容" />
+      </view>
+    </form>
+    <loading hidden="{{!loading}}">加载中...</loading>
+        <view class="header" hidden="{{!loading}}">没有更多内容了</view>
+        <view class="list" wx:if="({inputVal.length>0})">
+        <navigator wx:for="{{list}}" url="../detail/detail?id={{item.id}}">
+            <view class="list-item">
+                <image src="{{item.images.small}}"></image>
+                <view class="info">
+                    <view class="moveName">
+                        <text class="h3">{{item.original_title}}</text>
+                        <text class="score">{{item.rating.average}}</text>
+                    </view>
+                    <view class="publicTime">{{item.title}}({{item.year}})</view>
+                    <view class="author">导演:<block wx:for="{{item.directors}}"> {{ item.name }} </block></view>
+                </view>
+            </view>
+        </navigator>
+        </view>
+</view>

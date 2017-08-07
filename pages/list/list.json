@@ -1,7 +1,3 @@
 {
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#34595e",
-    "navigationBarTitleText": "正在热映>>豆瓣电影",
-    "navigationBarTextStyle":"#fff",
-    "enablePullDownRefresh":"true"
+    "navigationBarTitleText": "正在热映>>豆瓣电影"
 }
