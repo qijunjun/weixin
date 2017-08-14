@@ -1,30 +1,33 @@
 Page({
-  bindKeyInput: function(e) {
-    var that =this;
-    wx.request({
-      url:'https://api.douban.com/v2/movie/search',
-      data:{q:e.detail.value},
-      header:{'Content-Type':'json'},
-      success:function(res){
-        console.log(res.data);
-        that.setData({list:res.data.subjects,title:res.data.title,loading:false});
-      }
-    })
-  },
+
   /**
    * 页面的初始数据
    */
   data: {
-    list:[],
-    title:'Loading'
+    result:[],
+    inputVal:"",
+    loading:true
   },
-
+  // 事件处理函数
+  search:function(event){
+    var inputVal =event.detail.value;
+    var that =this;
+    wx.request({
+      url:"https://api.douban.com/v2/movie/search?q="+inputVal,
+      data:{},
+      header:{"Content-Type":"json"},
+      success:function(res){
+        that.setData({result:res.data.subjects,loading:false})
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

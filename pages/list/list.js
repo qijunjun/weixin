@@ -4,39 +4,43 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[],
+    Title:"",
+    movieData:{},
+    result:[],
     loading:true,
-    title:'Loading'
+    load:"Loading"
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (params) {
-      // 返回结果为Object{type:"teathers",title:"aaa"}
-    this.data.title = params.name || this.data.title;
-    console.log(params.type);
-    const apiUrl = 'https://api.douban.com/v2/movie/'+params.type;
+  //onLoad默认有一个Object类型的参数options,options指其他页面打开当前页面所调用的 query 参数
+  onLoad: function (options) {
+    // options为上一个页面
     var that = this;
     wx.request({
-      url:apiUrl,
+      url:"https://api.douban.com/v2/movie/"+options.type,
       data:{},
-      header:{
-        'Content-Type':'json'
-      },
-      success:function (res) {
-        console.log(res.data);
-        that.setData({list:res.data.subjects,title:res.data.title,loading:false});
+      header:{"Content-Type":"json"},
+      success:function(res){
+        if(res.data.title == "豆瓣电影北美票房榜"){
+          var re=[];
+          for(var i=0;i<res.data.subjects.length;i++){
+            re.push(res.data.subjects[i].subject);
+          }
+          that.setData({movieData:res.data,Title:res.data.title,result:re,loading:false})
+        }else{
+          that.setData({movieData:res.data,Title:res.data.title,result:res.data.subjects,loading:false})
+        }
       }
-    });
-
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-   
+    wx.setNavigationBarTitle({ title:  ' 石榴  >> 电影' })
   },
 
   /**

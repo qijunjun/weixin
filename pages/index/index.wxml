@@ -1,18 +1,32 @@
-<!--index.wxml定义页面结构：语法是XML语法，不是HTML-->
+<!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    <text>{{userInfo.city}}</text>
-    <text class="userinfo-sex">性别:{{userInfo.gender==2?"女":"男"}}</text>
+  <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <block wx:for="{{imageUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" mode="scaleToFill"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="movie_title">
+    <view class="big_title">豆瓣电影榜单集合</view>
+    <view class="small_title">最新，最IN的影视信息收集</view>
   </view>
-  <view class="classname">
-    <view class="item" wx:for="{{list}}">
-    <image src="{{item.image}}"></image>>
-      <text>{{item.title}}</text>
+  <view class="list_type">
+    <view bindtap="tiaoUrl" data-type="in_theaters">
+        <text>正在热映</text>
+        <image src="../../images/arrowright.png"></image>
     </view>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+    <view bindtap="tiaoUrl" data-type="coming_soon">
+        <text>即将上映</text>
+        <image src="../../images/arrowright.png"></image>
+     </view>
+    <view bindtap="tiaoUrl" data-type="top250">
+        <text>TOP250</text>
+        <image src="../../images/arrowright.png"></image>
+    </view>
+    <view bindtap="tiaoUrl" data-type="us_box">
+        <text>北美票房榜</text>
+        <image src="../../images/arrowright.png"></image>
+    </view>
   </view>
 </view>

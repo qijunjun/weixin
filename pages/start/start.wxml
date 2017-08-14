@@ -1,0 +1,8 @@
+<swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" mode="scaleToFill"></image>
+        <button class="tiyan" bindtap="click" wx:if="{{index == imgUrls.length - 1}}">立即体验</button>
+    </swiper-item>
+  </block>
+</swiper>

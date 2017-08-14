@@ -1,41 +1,51 @@
 {
   "pages":[
-    "pages/board/board",
-    "pages/list/list",
+    "pages/start/start",
+    "pages/index/index",
     "pages/search/search",
+    "pages/list/list",
     "pages/detail/detail",
+    "pages/commit/commit",
+    "pages/aboutUs/aboutUs",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#34595e",
-    "navigationBarTitleText": "首页",
-    "navigationBarTextStyle":"#fff",
-    "enablePullDownRefresh":"true"
+    "navigationBarBackgroundColor": "#333",
+    "navigationBarTitleText": "电影",
+    "navigationBarTextStyle":"#fff"
   },
-  "tabBar": {
-    "list": [{
-      "pagePath": "pages/board/board",
-      "text": "首页",
-      "iconPath": "images/home.png",
-      "selectedIconPath": "images/home-actived.png"
-    },
-    {
-      "pagePath": "pages/search/search",
-      "text": "搜索",
-      "iconPath": "images/search.png",
-      "selectedIconPath": "images/search-actived.png"
-    },
-    {
-      "pagePath": "pages/logs/logs",
-      "text": "用户",
-      "iconPath": "images/profile.png",
-      "selectedIconPath": "images/profile-actived.png"
-    }]
+  "tabBar":{
+    "color":"#ccc",
+    "selectedColor":"#35495e",
+    "borderStyle":"#fff",
+    "backgroundColor":"#f9f9f9",
+    "list":[
+      {
+        "text":"首页",
+        "pagePath":"pages/index/index",
+        "iconPath":"images/home.png",
+        "selectedIconPath":"images/home-actived.png"
+      },
+      {
+        "text":"搜索",
+        "pagePath":"pages/search/search",
+        "iconPath":"images/search.png",
+        "selectedIconPath":"images/search-actived.png"
+      },
+      {
+        "text":"我的",
+        "pagePath":"pages/aboutUs/aboutUs",
+        "iconPath":"images/profile.png",
+        "selectedIconPath":"images/profile-actived.png"
+      }
+    ]
   },
-  "networkTimeout": {
-    "request": 10000,
-    "downloadFile": 10000
+  "networkTimeout":{
+    "request":10000,
+    "connectSocket":10000,
+    "uploadFile":10000,
+    "downloadFile":10000
   },
   "debug":true
 }

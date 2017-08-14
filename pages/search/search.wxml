@@ -1,24 +1,21 @@
 <view class="container">
-    <form bindsubmit="formSubmit" bindreset="formReset">
-      <view class="section">
-        <input id="search" placeholder-class="placeholder" name="q" value="{{inputValue}}" bindinput="bindKeyInput" placeholder="请在此输入搜索内容" />
-      </view>
-    </form>
+    <view class="page-header">
+      <input class="page-header-text" placeholder="请输入内容" bindchange="search"/>
+    </view>
     <loading hidden="{{!loading}}">加载中...</loading>
-        <view class="header" hidden="{{!loading}}">没有更多内容了</view>
-        <view class="list" wx:if="({inputVal.length>0})">
-        <navigator wx:for="{{list}}" url="../detail/detail?id={{item.id}}">
-            <view class="list-item">
-                <image src="{{item.images.small}}"></image>
-                <view class="info">
-                    <view class="moveName">
-                        <text class="h3">{{item.original_title}}</text>
-                        <text class="score">{{item.rating.average}}</text>
+    <block wx:for="{{result}}">
+            <navigator url="../detail/detail?id={{item.id}}" hover-class="blue">
+                <view class="item">
+                    <view class="item_left">
+                        <image class="item_image" src="{{item.images.small}}"></image>
+                        <view class="item_info">
+                            <view class="movie_name">{{item.title}}</view>
+                            <view class="movie_year">{{item.original_title}}<text>({{item.year}})</text></view>
+                            <view>导演:<block wx:for="{{item.directors}}"><text>{{item.name}}</text></block></view>
+                        </view>
                     </view>
-                    <view class="publicTime">{{item.title}}({{item.year}})</view>
-                    <view class="author">导演:<block wx:for="{{item.directors}}"> {{ item.name }} </block></view>
-                </view>
-            </view>
-        </navigator>
-        </view>
+                    <view class="item_right">{{item.rating.average}}</view>
+               </view>
+           </navigator>
+        </block>
 </view>

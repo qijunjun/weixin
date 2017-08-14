@@ -1,0 +1,11 @@
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFit" background-size="cover"></image>
+  </view>
+  <view class="username">
+    <text class="user-name">昵称：{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+      <text class="user-sex">性别：{{userInfo.gender == "2"?"女":"男"}}</text>
+    </view>
+</view>

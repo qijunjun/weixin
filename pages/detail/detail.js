@@ -4,25 +4,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-      list:{},
-      loading:true,
-      title:'Loading'
+    result:{},
+    loading:true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      const apiUrl = 'https://api.douban.com/v2/movie/subject/'+options.id;
-      var that = this;
+      var that =this;
       wx.request({
-          url:apiUrl,
-          data:{},
-          header:{'Content-Type':'json'},
-          success:function(res){
-              console.log(res.data);
-              that.setData({list:res.data,title:res.data.title,loading:false});
-          }
+        url:"https://api.douban.com/v2/movie/subject/"+options.id,
+        data:{},
+        header:{"Content-Type":"json"},
+        success:function(res){
+          console.log(res.data);
+          that.setData({result:res.data,loading:false});
+        }
       })
   },
 

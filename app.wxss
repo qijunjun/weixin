@@ -1,10 +1,8 @@
 /**app.wxss**/
-/*css代码 用来设置整个应用的样式*/
 .container {
   height: 100%;
-  display: flex;
-  flex-direction: column;
   font-family:"微软雅黑";
+  font-size:28rpx;
   color:#333;
-  font-size:26rpx;
-} 
+}
+

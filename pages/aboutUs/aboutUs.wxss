@@ -1,0 +1,8 @@
+.userinfo{
+    width:90%;
+    margin:0 auto;
+    text-align:center;
+}
+.container > view{
+    margin-top:15px;
+}

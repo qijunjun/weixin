@@ -1,19 +1,19 @@
 <view class="container">
     <loading hidden="{{!loading}}">加载中...</loading>
-    <view class="header">{{title}}</view>
-    <view class="list">
-    <navigator wx:for="{{list}}" url="../detail/detail?id={{item.id}}">
-        <view class="list-item">
-            <image src="{{item.images.small}}"></image>
-            <view class="info">
-                <view class="moveName">
-                    <text class="h3">{{item.original_title}}</text>
-                    <text class="score">{{item.rating.average}}</text>
+    <view class="movie_title">{{Title}}</view>
+    <block wx:for="{{result}}">
+        <navigator url="../detail/detail?id={{item.id}}" hover-class="blue">
+            <view class="item">
+                <view class="item_left">
+                    <image class="item_image" src="{{item.images.small}}"></image>
+                    <view class="item_info">
+                        <view class="movie_name">{{item.title}}</view>
+                        <view class="movie_year">{{item.original_title}}<text>({{item.year}})</text></view>
+                        <view>导演:<block wx:for="{{item.directors}}"><text>{{item.name}}</text></block></view>
+                    </view>
                 </view>
-                <view class="publicTime">{{item.title}}({{item.year}})</view>
-                <view class="author">导演:<block wx:for="{{item.directors}}"> {{ item.name }} </block></view>
-            </view>
-        </view>
-    </navigator>
-    </view>
+                <view class="item_right">{{item.rating.average}}</view>
+           </view>
+       </navigator>
+    </block>
 </view>

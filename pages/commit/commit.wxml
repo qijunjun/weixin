@@ -1,0 +1,10 @@
+<view class="container">
+     <loading hidden="{{!loading}}">加载中...</loading>
+        <image src="{{result.images.large}}" mode="aspectFill"></image>
+        <view class="year">{{result.title}}<text>({{result.year}})</text></view>
+        <view class="rating">评分：{{result.rating.average}}</view>
+        <view>短评数量：<text>{{result.comments_count}}</text></view>
+        <view>看过人数：<text>{{result.collect_count}}</text></view>
+        <view>想看人数：<text>{{result.wish_count}}</text></view>
+        <view>影评数量：<text>{{result.reviews_count}}</text></view>
+</view>

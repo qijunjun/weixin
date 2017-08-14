@@ -4,18 +4,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls:[
-      "https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2380677316.jpg",
-      "https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2382076389.jpg"
-    ]},
+    result:[],
+    loading:true
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.setData({imgUrls:[]})
+    var that =this;
+    wx.request({
+      url:"https://api.douban.com/v2/movie/subject/"+options.id,
+      data:{},
+      header:{"Content-Type":"json"},
+      success:function(res){
+        that.setData({result:res.data,loading:false});
+      }
+    })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
